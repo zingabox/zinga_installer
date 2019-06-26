@@ -8,16 +8,20 @@ AFRAME.registerComponent('zinga_installer', {
     for (var i = 0; i < allAtts.length; i++) {
         var attrib = allAtts[i];
       
-        if(attrib.name.startsWith("zinga_") && attrib.name !== 'zinga_installer')// && currComps.indexOf(attrib.name) < 0)
+        if(attrib.name.startsWith("gh--")) //&& attrib.name !== 'zinga_installer')// && currComps.indexOf(attrib.name) < 0)
         {
           var els = document.querySelectorAll('[' + attrib.name + ']')
           var vals=removeComponent(attrib.name,els)
           
+          const domain=attrib.name.replace(/--/g, '/');
+          console.log('domain is')
+          console.log(domain)
          ////HERE YOU GET USERNAME, COMPONENT NAME, AND VERSION NAME
-          const domain=attrib.value.split('domain:')[1].split(';')[0]
+          const version=attrib.value.split('version:')[1].split(';')[0]
           var my_awesome_script = document.createElement('script');
           // my_awesome_script.setAttribute('src','https://cdn.jsdelivr.net/gh/jafetmorales/'+attrib.name+'@v0.1/index.js');
-          my_awesome_script.setAttribute('src','https://cdn.jsdelivr.net/'+domain);
+          my_awesome_script.setAttribute('src','https://cdn.jsdelivr.net/'+domain+'@'+version+'/index.js');
+          console.log('https://cdn.jsdelivr.net/'+domain+'@master/index.js')
           // my_awesome_script.setAttribute('src','./'+attrib.name+'.js');
           document.head.appendChild(my_awesome_script);
           my_awesome_script.addEventListener('load', loadedCallback(attrib,els,vals));

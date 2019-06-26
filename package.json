@@ -1,0 +1,19 @@
+{
+  "name": "zinga_installer",
+  "version": "1.0.0",
+  "description": "Helps zinga components install themselves. All you need to do is register them as an AFRAME component with a name that starts with \"zinga_\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jafetmorales/zinga_installer.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/jafetmorales/zinga_installer/issues"
+  },
+  "homepage": "https://github.com/jafetmorales/zinga_installer#readme"
+}
