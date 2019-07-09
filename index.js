@@ -1,3 +1,4 @@
+////SOME RELEVANT INFO GOES HERE
 AFRAME.registerComponent('zinga_installer', {
     schema: {
   },
